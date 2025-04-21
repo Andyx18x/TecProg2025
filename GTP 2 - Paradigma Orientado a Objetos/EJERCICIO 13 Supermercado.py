@@ -58,3 +58,5 @@ ProductoLimpieza("Jabon")
 ]
 carrito = Carrito(productos)
 carrito.aplicar_descuentos()
+
+#Ahora si querés agregar un nuevo tipo de producto (ProductoElectronico, etc.), no tocás el código existente, solo añadís una clase nueva.
