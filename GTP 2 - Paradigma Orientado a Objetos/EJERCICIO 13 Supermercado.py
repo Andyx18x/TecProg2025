@@ -29,7 +29,7 @@ calcular_descuento(carrito.productos) #Aca se rompe el principio de ocultacion, 
 
 #Codigo modificado
 from abc import ABC, abstractmethod
-class Producto:
+class Producto(ABC):
     def __init__(self, nombre: str):
         self.nombre = nombre
     @abstractmethod
@@ -58,3 +58,5 @@ ProductoLimpieza("Jabon")
 ]
 carrito = Carrito(productos)
 carrito.aplicar_descuentos()
+
+#Ahora si querés agregar un nuevo tipo de producto (ProductoElectronico, etc.), no tocás el código existente, solo añadís una clase nueva.
