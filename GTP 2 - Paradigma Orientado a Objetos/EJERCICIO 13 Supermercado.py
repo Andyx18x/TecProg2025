@@ -9,10 +9,10 @@ class Carrito:
 
 def calcular_descuento(productos: list):
     for producto in productos:
-        if producto.categoria == 'alimentos':  #Se rompe el principio de ocultacion al utilizar un atributo de otra clase
-            print(f"Descuento del 10% en {producto.nombre}") #Principio de ocultacion
+        if producto.categoria == 'alimentos':
+            print(f"Descuento del 10% en {producto.nombre}")
         elif producto.categoria == 'limpieza':
-            print(f"Descuento del 5% en {producto.nombre}") #Principio de ocultacion
+            print(f"Descuento del 5% en {producto.nombre}")
         # Añadir más condiciones para nuevos tipos de productos y descuentos
         
 productos = [
@@ -29,7 +29,7 @@ calcular_descuento(carrito.productos) #Aca se rompe el principio de ocultacion, 
 
 #Codigo modificado
 from abc import ABC, abstractmethod
-class Producto(ABC):
+class Producto:
     def __init__(self, nombre: str):
         self.nombre = nombre
     @abstractmethod
@@ -58,3 +58,5 @@ ProductoLimpieza("Jabon")
 ]
 carrito = Carrito(productos)
 carrito.aplicar_descuentos()
+
+#Ahora si querés agregar un nuevo tipo de producto (ProductoElectronico, etc.), no tocás el código existente, solo añadís una clase nueva.
