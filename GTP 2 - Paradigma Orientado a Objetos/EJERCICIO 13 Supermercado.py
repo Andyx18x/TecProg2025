@@ -9,10 +9,10 @@ class Carrito:
 
 def calcular_descuento(productos: list):
     for producto in productos:
-        if producto.categoria == 'alimentos':
-            print(f"Descuento del 10% en {producto.nombre}")
+        if producto.categoria == 'alimentos':  #Se rompe el principio de ocultacion al utilizar un atributo de otra clase
+            print(f"Descuento del 10% en {producto.nombre}") #Principio de ocultacion
         elif producto.categoria == 'limpieza':
-            print(f"Descuento del 5% en {producto.nombre}")
+            print(f"Descuento del 5% en {producto.nombre}") #Principio de ocultacion
         # Añadir más condiciones para nuevos tipos de productos y descuentos
         
 productos = [
@@ -58,5 +58,3 @@ ProductoLimpieza("Jabon")
 ]
 carrito = Carrito(productos)
 carrito.aplicar_descuentos()
-
-#Ahora si querés agregar un nuevo tipo de producto (ProductoElectronico, etc.), no tocás el código existente, solo añadís una clase nueva.
